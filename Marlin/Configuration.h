@@ -265,7 +265,7 @@
 #define PSU_NAME "Power Supply"
 
 #if ENABLED(PSU_CONTROL)
-  #define PSU_ACTIVE_HIGH true     // Set 'false' for ATX, 'true' for X-Box
+  #define PSU_ACTIVE_HIGH false     // Set 'false' for ATX, 'true' for X-Box
 
   //#define PSU_DEFAULT_OFF         // Keep power off until enabled directly with M80
   //#define PSU_POWERUP_DELAY 100   // (ms) Delay for the PSU to warm up to full power
@@ -506,7 +506,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 200
+#define EXTRUDE_MAXLENGTH 50
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -671,7 +671,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1600, 6432, 7350.67}    //original 7350.67 avec le nouveau 1575 : pour le derier chiffre = extrueur
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1600, 6432, 7350.67}    //original 7350.67 avec le nouveau 1575 : pour le derier chiffre = extrudeur
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
@@ -689,12 +689,12 @@
  * (Maximum start speed for accelerated moves)
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
- */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+ */-11
+#define DEFAULT_MAX_ACCELERATION      { 5000, 3000, 100, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 200, 20000 } // ...or, set your own edit limits
+  #define MAX_ACCEL_EDIT_VALUES       { 10000, 6000, 200, 20000 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -896,7 +896,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { -24.5, 1, -2.8 }
+#define NOZZLE_TO_PROBE_OFFSET { -33.42, -11, -2.8 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1032,11 +1032,11 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 395
-#define Y_BED_SIZE 420
+#define X_BED_SIZE 410
+#define Y_BED_SIZE 410
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -15
+#define X_MIN_POS -7
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS 410 
@@ -1181,7 +1181,7 @@
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
-    #define MESH_TEST_HOTEND_TEMP  205    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
+    #define MESH_TEST_HOTEND_TEMP  215    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
     #define MESH_TEST_BED_TEMP      60    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
     #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
     #define G26_RETRACT_MULTIPLIER   1.0  // G26 Q (retraction) used by default between mesh test elements.
@@ -1416,7 +1416,7 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 200
+#define PREHEAT_1_TEMP_HOTEND 210
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED     255 // Value from 0 to 255
 

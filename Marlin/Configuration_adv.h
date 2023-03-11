@@ -673,7 +673,7 @@
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
-    #define Z_STEPPER_ALIGN_XY { {  25, 225 }, { 325,  225 } }
+    #define Z_STEPPER_ALIGN_XY { {  10, 225 }, { 400,  225 } }
   /**
    * Orientation for the automatically-calculated probe positions.
    * Override Z stepper align points with 'M422 S<index> X<pos> Y<pos>'
@@ -1054,7 +1054,7 @@
    */
   //#define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
-    #define PLR_ENABLED_DEFAULT   false // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
+    #define PLR_ENABLED_DEFAULT   false ///dan avant false // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
     #define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
     #define POWER_LOSS_ZRAISE       10 // (mm) Z axis raise on resume (on power loss with UPS)
     #define POWER_LOSS_PIN         PG5 // Pin to detect power loss. Set to -1 to disable default pin on boards without module.
