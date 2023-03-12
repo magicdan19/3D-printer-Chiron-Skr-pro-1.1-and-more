@@ -59,7 +59,7 @@
 // filament sensor
 //
 #define FIL_RUNOUT_PIN PE10
-//#define FIL_RUNOUT2_PIN PE15
+///dan #define FIL_RUNOUT2_PIN PE15
 
 //
 // Main Relais sensor BTT v1.2
@@ -187,8 +187,8 @@
 #define HEATER_BED_PIN     PD12 // Hotbed
 
 // Fans
-#define FAN_PIN            PC8  // Turbine
-#define FAN1_PIN           PE5  // Fan hotend 1
+#define FAN_PIN            PE5  ///dan inverse avec // Fan1 Turbine
+#define FAN1_PIN           PC8  ///dan inverse avec Fan // Fan hotend 1
 #define FAN2_PIN           PE6  // Fan hotend 2
 
 //

@@ -671,7 +671,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1600, 6432, 7350.67}    //original 7350.67 avec le nouveau 1575 : pour le derier chiffre = extrudeur
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 1280, 1600, 6432, 2210}    //original 7350.67 avec le nouveau 1575 et avec double engrenage 2210 : pour le derier chiffre = extrudeur
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
