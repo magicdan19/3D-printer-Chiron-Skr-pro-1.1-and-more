@@ -213,10 +213,15 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  ///dan nouveau avec m303
-  #define DEFAULT_Kp 64.54
-  #define DEFAULT_Ki 11.86
-  #define DEFAULT_Kd 87.77
+  ///dan nouveau avec m303 avec 50 watt
+  #define DEFAULT_Kp 21.04
+  #define DEFAULT_Ki 1.74
+  #define DEFAULT_Kd 63.55  
+  
+  ///dan nouveau avec m303 avec 40 watt
+  //#define DEFAULT_Kp 64.54
+  //#define DEFAULT_Ki 11.86
+  //#define DEFAULT_Kd 87.77
 
   ///dan original
   //#define DEFAULT_Kp 20
@@ -689,7 +694,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { -33.42, -11, -1.5 }
+#define NOZZLE_TO_PROBE_OFFSET { -33.42, -11, -1.35 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
