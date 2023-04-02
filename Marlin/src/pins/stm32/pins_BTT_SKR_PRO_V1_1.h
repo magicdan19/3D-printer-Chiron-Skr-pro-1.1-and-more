@@ -1,24 +1,4 @@
-/**
- * Marlin 3D Printer Firmware
- * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
- *
- * Based on Sprinter and grbl.
- * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- */
+
 #pragma once
 
 #ifndef TARGET_STM32F4
@@ -29,13 +9,6 @@
 
 #define BOARD_INFO_NAME "BIGTREE SKR Pro 1.1" // redefined?
 
-// Use one of these or SDCard-based Emulation will be used
-//#define SRAM_EEPROM_EMULATION   // Use BackSRAM-based EEPROM emulation
-//#define FLASH_EEPROM_EMULATION  // Use Flash-based EEPROM emulation
-
-//
-// Servos
-//
 #define SERVO0_PIN         PA1
 
 //
@@ -107,6 +80,7 @@
 #define Z2_STEP_PIN        PD13
 #define Z2_DIR_PIN         PG9
 #define Z2_ENABLE_PIN      PF0
+ 
 #ifndef Z2_CS_PIN
   #define Z2_CS_PIN        PG12
 #endif
@@ -127,24 +101,7 @@
 #endif
 
 #if HAS_TMC220x
-  /**
-   * TMC2208/TMC2209 stepper drivers
-   *
-   * Hardware serial communication ports.
-   * If undefined software serial is used according to the pins below
-   */
-  //#define X_HARDWARE_SERIAL  Serial
-  //#define X2_HARDWARE_SERIAL Serial1
-  //#define Y_HARDWARE_SERIAL  Serial1
-  //#define Y2_HARDWARE_SERIAL Serial1
-  //#define Z_HARDWARE_SERIAL  Serial1
-  //#define Z2_HARDWARE_SERIAL Serial1
-  //#define E0_HARDWARE_SERIAL Serial1
-  //#define E1_HARDWARE_SERIAL Serial1
-  //#define E2_HARDWARE_SERIAL Serial1
-  //#define E3_HARDWARE_SERIAL Serial1
-  //#define E4_HARDWARE_SERIAL Serial1
-
+  
   //
   // Software serial
   //
@@ -213,21 +170,6 @@
   #define SDSS             PB12
 #endif
 
-
-/**
- *               _____                                             _____
- *           NC | · · | GND                                    5V | · · | GND
- *        RESET | · · | PF12(SD_DETECT)             (LCD_D7)  PG7 | · · | PG6  (LCD_D6)
- *   (MOSI)PB15 | · · | PF11(BTN_EN2)               (LCD_D5)  PG3 | · · | PG2  (LCD_D4)
- *  (SD_SS)PB12 | · · | PG10(BTN_EN1)               (LCD_RS) PD10 | · · | PD11 (LCD_EN)
- *    (SCK)PB13 | · · | PB14(MISO)                 (BTN_ENC)  PA8 | · · | PG4  (BEEPER)
- *               ￣￣                                               ￣￣
- *               EXP2                                              EXP1
- */
-
-//
-// LCDs and Controllers
-//
 #if HAS_SPI_LCD
   #define BEEPER_PIN       PG4
   #define BTN_ENC          PA8
