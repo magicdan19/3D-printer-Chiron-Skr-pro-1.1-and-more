@@ -144,9 +144,9 @@
 #define HEATER_BED_PIN     PD12 // Hotbed
 
 // Fans
-#define FAN_PIN            PE5  ///dan inverse avec // Fan1 Turbine
+#define FAN_PIN            PE6  ///dan inverse avec // Fan1 Turbine cooling
 #define FAN1_PIN           PC8  ///dan inverse avec Fan // Fan hotend 1
-#define FAN2_PIN           PE6  // Fan hotend 2
+#define FAN2_PIN           PE5 // Fan hotend 2
 
 //
 // Misc. Functions
