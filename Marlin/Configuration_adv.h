@@ -409,7 +409,7 @@
  *
  * Your board's pins file specifies the recommended pins. Override those here
  * or set to -1 to disable completely.
- *
+ * 
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
@@ -673,7 +673,7 @@
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
-    #define Z_STEPPER_ALIGN_XY { {  40, 225 }, { 370,  225 } }
+    #define Z_STEPPER_ALIGN_XY { {  40, 205 }, { 370,  205 } }
   /**
    * Orientation for the automatically-calculated probe positions.
    * Override Z stepper align points with 'M422 S<index> X<pos> Y<pos>'
@@ -2049,7 +2049,7 @@
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT       800
+    #define Y_CURRENT       902
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     256
     #define Y_RSENSE          0.11
@@ -2270,24 +2270,24 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD
+  //#define HYBRID_THRESHOLD
 
-  #define X_HYBRID_THRESHOLD     100  // [mm/s]
-  #define X2_HYBRID_THRESHOLD    100
-  #define Y_HYBRID_THRESHOLD     100
-  #define Y2_HYBRID_THRESHOLD    100
+  #define X_HYBRID_THRESHOLD     101  // [mm/s]
+  //#define X2_HYBRID_THRESHOLD    100
+  #define Y_HYBRID_THRESHOLD     101
+  //#define Y2_HYBRID_THRESHOLD    100
   #define Z_HYBRID_THRESHOLD       3
   #define Z2_HYBRID_THRESHOLD      3
-  #define Z3_HYBRID_THRESHOLD      3
-  #define Z4_HYBRID_THRESHOLD      3
+  //#define Z3_HYBRID_THRESHOLD      3
+  //#define Z4_HYBRID_THRESHOLD      3
   #define E0_HYBRID_THRESHOLD     30
-  #define E1_HYBRID_THRESHOLD     30
-  #define E2_HYBRID_THRESHOLD     30
-  #define E3_HYBRID_THRESHOLD     30
-  #define E4_HYBRID_THRESHOLD     30
-  #define E5_HYBRID_THRESHOLD     30
-  #define E6_HYBRID_THRESHOLD     30
-  #define E7_HYBRID_THRESHOLD     30
+  //#define E1_HYBRID_THRESHOLD     30
+  //#define E2_HYBRID_THRESHOLD     30
+  //#define E3_HYBRID_THRESHOLD     30
+  //#define E4_HYBRID_THRESHOLD     30
+  //#define E5_HYBRID_THRESHOLD     30
+  //#define E6_HYBRID_THRESHOLD     30
+  //#define E7_HYBRID_THRESHOLD     30
 
   /**
    * Use StallGuard2 to home / probe X, Y, Z.
@@ -2319,7 +2319,7 @@
     #define X_STALL_SENSITIVITY  100
     //#define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
     #define Y_STALL_SENSITIVITY  100
-    #define Z_STALL_SENSITIVITY  150
+    //#define Z_STALL_SENSITIVITY  150
     //#define SPI_ENDSTOPS              // TMC2130 only
     //#define IMPROVE_HOMING_RELIABILITY
   #endif
@@ -2328,13 +2328,13 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  //#define SQUARE_WAVE_STEPPING
+  #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
    * M122 S0/1 will enable continous reporting.
    */
-  //#define TMC_DEBUG
+  #define TMC_DEBUG
 
   /**
    * You can set your own advanced settings by filling in predefined functions.
